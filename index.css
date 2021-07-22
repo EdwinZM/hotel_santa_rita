@@ -11,6 +11,11 @@
     margin-top: 10vh;
 }
 
+.video {
+    width: 840px;
+    height: 630px;
+}
+
 @media (max-width: 700px) {
     .site-block-half {
         display: flex;
@@ -19,5 +24,9 @@
     .image {
         display: flex;
         align-self: flex-start;
+    }
+    .video {
+        width: 350px;
+        height: 257px;
     }
 }
