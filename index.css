@@ -10,3 +10,14 @@
 .iframe {
     margin-top: 10vh;
 }
+
+@media (max-width: 700px) {
+    .site-block-half {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .image {
+        display: flex;
+        align-self: flex-start;
+    }
+}
