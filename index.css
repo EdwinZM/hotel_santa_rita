@@ -29,4 +29,21 @@
         width: 350px;
         height: 257px;
     }
+
+    .slider-img-fluid {
+        height: 40vh;
+    }
+
+    .home-slider {
+        height: 40vh;
+    }
+}
+
+.main-image-fluid {
+    height: auto;
+    max-width: 100%;
+}
+
+.gallery-navbar {
+    background-color: goldenrod;
 }
