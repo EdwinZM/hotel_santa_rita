@@ -38,6 +38,7 @@
   height: 100%;
   border-top-left-radius: 2%;
   border-top-right-radius: 2%;
+
 }
 
 
@@ -49,6 +50,7 @@
   margin-bottom: 700px;
   background-color: rgb(241, 241, 239) !important;
   border-radius: 2%;
+  box-shadow: 5px 5px 5px gray;
 }
 
 .card-body {
@@ -57,6 +59,11 @@
   background-color: rgb(242, 242, 242);
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.grandes-ofertas {
+  background-color: rgb(200, 200, 200) !important;
 }
 
 .list-group {
