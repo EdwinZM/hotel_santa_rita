@@ -9,6 +9,12 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Montserrat";
+    src: url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700");
+}
+
 @font-face {
   font-family: "FontAwesome";
   src: url("fonts/fontawesome/fonts/fontawesome-webfont-v=4.7.0.eot");
@@ -55,8 +61,8 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  /* --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace; */
 }
 *,
 *::before,
@@ -65,7 +71,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif !important;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -88,7 +94,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+    "Segoe UI Symbol", "Noto Color Emoji" !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -140,6 +146,8 @@ small {
   font-size: 80%;
 }
 a {
+  font-family: "Montserrat" !important;
+  font-size: 120% !important;
   color: #e8b22c;
   text-decoration: none;
   background-color: transparent;
@@ -293,7 +301,7 @@ h5,
 .h3,
 .h5 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  font-family: "Montserrat" !important;
   font-weight: 500;
   line-height: 1.2;
   color: inherit;
@@ -335,6 +343,17 @@ small,
   font-weight: 400;
 }
 .list-unstyled {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-styled {
+  display: block;
   padding-left: 0;
   list-style: none;
 }
@@ -1004,8 +1023,8 @@ input[type="button"].btn-block {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
@@ -1554,11 +1573,29 @@ button.bg-light:focus {
   -ms-flex-pack: center !important;
   justify-content: center !important;
 }
+
+.justify-content-start {
+  -webkit-box-pack: flex-start !important;
+  -ms-flex-pack: flex-start !important;
+  justify-content: flex-start !important;
+}
+
 .align-items-center {
   -webkit-box-align: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
 }
+
+.align-items-start {
+  -webkit-box-align: flex-start !important;
+  -ms-flex-align: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
 .align-self-end {
   -ms-flex-item-align: end !important;
   align-self: flex-end !important;
@@ -9499,15 +9536,9 @@ textarea.form-control {
   font-family: "Playfair+Display", times, serif;
 }
 .site-navbar {
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  min-height: 300px;
-  overflow-y: scroll;
+  position: relative;
+  display: flex;
+  align-content: flex-start;
 }
 .site-navbar nav {
   text-align: left;
@@ -9516,32 +9547,30 @@ textarea.form-control {
   font-family: "Playfair+Display", times, serif;
 }
 .site-navbar nav .menu li a {
-  color: #000;
-  font-size: 40px;
+  color: #fff;
+  font-size: 25px;
   padding: 5px 10px;
   position: relative;
 }
 .site-navbar nav .menu li a:before {
   content: "";
-  position: absolute;
+  position: relative;
   bottom: 0;
   height: 50%;
   width: 0%;
-  z-index: -1;
-  background: #e8b22c;
   -webkit-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }
-.site-navbar nav .menu li a:hover:before {
-  width: 100%;
+.site-navbar nav .menu li a:hover {
+  color: goldenrod;
 }
-.site-navbar nav .menu li.active a:before {
-  width: 100%;
+.site-navbar nav .menu li.active a:active, .active{
+  color: goldenrod;
 }
 .full-height {
-  height: 100vh;
-  min-height: 700px;
+  height: 10vh;
+  min-height: 70px;
 }
 .site-hero {
   background-size: cover;
@@ -9574,7 +9603,7 @@ textarea.form-control {
   min-height: 700px;
 }
 .site-hero-inner .heading {
-  font-size: 80px;
+  font-size: 60px;
   font-family: "Playfair+Display", times, serif;
   color: #fff;
   line-height: 1;
@@ -9584,12 +9613,24 @@ textarea.form-control {
   .site-hero-inner .heading {
     font-size: 40px;
   }
+  a {
+    font-size: 20px !important;
+
+  }
+
+  .navigation-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
 }
 .inner-page .site-hero-inner {
   height: 50vh;
   min-height: 700px;
 }
-.menu-open .site-menu-toggle span {
+/* .menu-open .site-menu-toggle span {
   background: #000;
 }
 .site-menu-toggle {
@@ -9657,7 +9698,7 @@ textarea.form-control {
   -o-transform: rotate(-135deg);
   -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
-}
+} */
 .section {
   padding: 7em 0;
 }
@@ -10094,7 +10135,7 @@ textarea.form-control {
   margin-bottom: 10px;
 }
 .custom-pagination .page-item.active .page-link {
-  background: #e8b22c;
+  /* background: #e8b22c; */
   -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
 }
