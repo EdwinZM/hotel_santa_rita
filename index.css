@@ -54,7 +54,8 @@
 }
 
 .card-body {
-  padding: 10px;
+  min-height: 700px;
+  padding: 20px;
   margin: auto;
   background-color: rgb(242, 242, 242);
   border-bottom-left-radius: 2%;
