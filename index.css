@@ -92,6 +92,7 @@
     min-width: 100%;
   }
 
+
   @media (min-width: 1100px) {
     .col-8 {
       display: flex;
@@ -99,8 +100,19 @@
     }
   }
 
+@media (max-width: 350px) {
+  .frontpage-video,
+  .video {
+    width: 280px !important;
+    height: 205px !important;
+  }
+  a {
+    font-size: 100% !important;
+  }
+}
 
-@media (max-width: 1000px) {
+
+@media (max-width: 1050px) {
 
   .card-container {
     justify-content: center;
@@ -110,7 +122,7 @@
 
   .card {
     align-self: center;
-    min-width: 345px !important;
+    min-width: 300px !important;
     height: 271px !important;
     margin-bottom: 800px
   }
@@ -125,7 +137,7 @@
         justify-content: center;
       }
     .full-height {
-        height: 100vh;
+        height: 100%;
         min-height: 700px;
     }
     .site-navbar {
@@ -266,7 +278,7 @@
     .frontpage-video {
         display: block ;       
         width: 350px;
-        height: 257px;
+        height: 271px;
     }
 
     .slider-img-fluid {

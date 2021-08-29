@@ -9614,13 +9614,19 @@ textarea.form-control {
     font-size: 40px;
   }
   a {
-    /* font-size: 20px !important; */
+    font-size: 115% !important;
 
+  }
+
+  .container {
+    max-width: 100% !important;
   }
 
   .navigation-bar {
     display: flex;
     flex-wrap: wrap;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -9722,7 +9728,7 @@ textarea.form-control {
   .testimonial-section .heading,
   .slider-section .heading,
   .blog-post-entry .heading {
-    font-size: 40px;
+    font-size: 30px !important;
   }
 }
 .slider-section {
