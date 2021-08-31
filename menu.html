@@ -6,8 +6,12 @@
     <title>Restaurante Santa Rita</title>
 </head>
 <body>
-    <iframe id="iframepdf" width="100%" height="100%" src="./menu.pdf">
-    </iframe>
+    <iframe id="theFrame" src="menu.pdf" target="_blank" style="height:100%; width:100%;"></iframe>
+    <script>
+    document.getElementById("theFrame").contentWindow.onload = function() {
+        this.document.getElementsByTagName("img")[0].style.width="100%";
+    };
+    </script>
     
 </body>
 </html>
