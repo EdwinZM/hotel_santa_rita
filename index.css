@@ -2,6 +2,10 @@
   color: white;
 }
 
+#about-text {
+  margin: 30px;
+}
+
 hr {
   border: solid 1px rgb(190, 190, 190);
   margin: 250px 30px 15px;
