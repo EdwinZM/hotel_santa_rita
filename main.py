@@ -30,4 +30,5 @@ def about():
 def contact():
     return render_template("contact.html")
 
-app.run()
+if __name__ == "__main__":
+    app.run(host="127.0.0.1")
