@@ -1,6 +1,4 @@
 from flask import Flask, render_template
-from sqlalchemy import true
-
 
 app = Flask(__name__)
 
@@ -32,4 +30,4 @@ def about():
 def contact():
     return render_template("contact.html")
 
-app.run(debug=True)
+app.run()
