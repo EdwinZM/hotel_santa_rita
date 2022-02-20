@@ -2,9 +2,27 @@
   color: white;
 }
 
+
 #about-text {
   margin: 30px;
 }
+
+/* .menu-li {
+  padding: 0;
+  margin: 0;
+  height: 10px !important;
+  display: flex;
+  align-self: center;
+} */
+
+/* .site-header{
+
+} */
+.site-header {
+  position: fixed !important;
+  background-color: #700138 !important;
+} 
+
 
 hr {
   border: solid 1px rgb(190, 190, 190);
@@ -105,6 +123,26 @@ hr {
   .sencillaconbalcon {
     min-width: 100%;
   }
+  .site-menu-toggle {
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    float: right;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 200;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
 
 
   @media (min-width: 1100px) {
@@ -112,9 +150,18 @@ hr {
       display: flex;
       justify-content: flex-end;
     }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 5px !important;
+      height: 0px !important;
+      position: fixed !important;
+      background-color: #700138 !important;
+    } 
   }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .frontpage-video,
   .video {
     width: 280px !important;
@@ -122,6 +169,15 @@ hr {
   }
   a {
     font-size: 100% !important;
+  }
+  .site-menu-toggle {
+    margin-top: 3.1545741324921135vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-menu-toggle {
+    margin-top: 2.365930599369085vh;
   }
 }
 
@@ -133,6 +189,15 @@ hr {
     align-items: center;
     /* margin-bottom: 800px !important; */
   }
+  .site-header {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 30px 5px !important;
+    height: 0px !important;
+    position: fixed !important;
+    background-color: #700138 !important;
+  } 
 
   .room-card,
   .event-room-card,
@@ -204,10 +269,12 @@ hr {
       .menu-open .site-menu-toggle span {
         background: #000;
       }
-      .site-menu-toggle {
+      /* .site-menu-toggle {
+        display: flex;
+        align-self: center;
         float: right;
         width: 40px;
-        height: 45px;
+        height: 30px;
         position: relative;
         z-index: 200;
         -webkit-transform: rotate(0deg);
@@ -220,7 +287,7 @@ hr {
         -o-transition: 0.5s ease-in-out;
         transition: 0.5s ease-in-out;
         cursor: pointer;
-      }
+      } */
       .site-menu-toggle span {
         display: block;
         position: absolute;

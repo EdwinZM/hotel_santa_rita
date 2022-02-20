@@ -9519,10 +9519,10 @@ textarea.form-control {
   height: inherit;
 }
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  padding: 60px 0;
+  padding: 20px 0;
   z-index: 2;
 }
 .menu-open .site-header {
@@ -10007,7 +10007,7 @@ textarea.form-control {
   font-size: 18px;
   padding: 10px;
 }
-.footer-section .link li {
+.footer-section .link {
   margin-bottom: 10px;
 }
 .footer-newsletter .form-group {
