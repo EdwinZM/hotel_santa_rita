@@ -2,7 +2,6 @@
   color: white;
 }
 
-
 #about-text {
   margin: 30px;
 }
@@ -173,12 +172,32 @@ hr {
   .site-menu-toggle {
     margin-top: 3.1545741324921135vh;
   }
+  .site-navbar {
+    display: flex;
+    align-items: center !important;
+  }
+  /* .navigation-bar,
+  .navbar,
+  .navbar-nav {
+    margin-top: 50%;
+  } */
+}
+
+@media (max-width: 370px) {
+  .site-menu-toggle {
+    margin-top: 4.1545741324921135vh !important;
+  }
 }
 
 @media (max-width: 550px) {
   .site-menu-toggle {
     margin-top: 2.365930599369085vh;
   }
+  /* .navigation-bar,
+  .navbar,
+  .navbar-nav {
+    margin-top: 50%;
+  } */
 }
 
 
@@ -215,6 +234,7 @@ hr {
     .navigation-bar,
     .navbar,
     .navbar-nav {
+        margin-top: 50%;
         flex-direction: column;
         -webkit-box-align: center !important;
         -ms-flex-align: center !important;
