@@ -17,9 +17,28 @@
 /* .site-header{
 
 } */
+header.active {
+  color: black !important;
+  background-color: white !important;
+  transition: .5s;
+}
+
+header nav li a.active {
+  color: black !important;
+  transition: .5s;
+}
+
+header nav li a:hover {
+  color: goldenrod;
+}
+
+header em.active {
+  color: black !important;
+}
+
 .site-header {
   position: fixed !important;
-  background-color: #700138 !important;
+  background-color: #700138;
 } 
 
 
