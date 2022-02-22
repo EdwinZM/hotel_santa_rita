@@ -126,6 +126,9 @@ hr {
     display: flex;
     align-self: center;
     justify-self: flex-end;
+    margin-top: 1.5772870662460567vh;
+      /* margin-top: 3.1545741324921135vh !important; */
+    flex-wrap: wrap;
     float: right;
     width: 30px;
     height: 30px;
@@ -160,7 +163,7 @@ hr {
     } 
   }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .frontpage-video,
   .video {
     width: 280px !important;
@@ -169,9 +172,7 @@ hr {
   a {
     font-size: 100% !important;
   }
-  .site-menu-toggle {
-    margin-top: 3.1545741324921135vh;
-  }
+
   .site-navbar {
     display: flex;
     align-items: center !important;
@@ -183,21 +184,10 @@ hr {
   } */
 }
 
-@media (max-width: 370px) {
-  .site-menu-toggle {
-    margin-top: 4.1545741324921135vh !important;
-  }
-}
-
-@media (max-width: 550px) {
-  .site-menu-toggle {
-    margin-top: 2.365930599369085vh;
-  }
-  /* .navigation-bar,
-  .navbar,
-  .navbar-nav {
-    margin-top: 50%;
-  } */
+.site-logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
 }
 
 
