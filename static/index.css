@@ -28,12 +28,16 @@ header nav li a.active {
   transition: .5s;
 }
 
-header nav li a:hover {
-  color: goldenrod;
+header nav li a.active:hover {
+  color: goldenrod !important;
 }
 
 header em.active {
   color: black !important;
+}
+
+.site-menu-toggle span.active {
+  background-color: #000;
 }
 
 .site-header {
@@ -180,6 +184,9 @@ hr {
       position: fixed !important;
       background-color: #700138 !important;
     } 
+    .site-logo a {
+      font-size: 40px !important;
+    }
   }
 
 @media (max-width: 500px) {
