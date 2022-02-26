@@ -21,38 +21,18 @@ try {
     window.onscroll = function() {
         if (window.scrollY >= 100) {
             header.classList.add("active");
-            // for (i = 0; i < navLink.length; i++) {
-            //     navLink[i].classList.add("active");
-            // }
-            // for (i=0; i < siteMenuToggle.length; i++) {
-            //     siteMenuToggle[i].classList.add("active")
-            // }
             iterAdd(navLink);
             iterAdd(siteMenuToggle);
             siteLogo.classList.add("active");
             
         } else {
             header.classList.remove("active");
-            // for (i = 0; i < navLink.length; i++) {
-            //     navLink[i].classList.remove("active");
-            // }
-            // for (i=0; i < siteMenuToggle.length; i++) {
-            //     siteMenuToggle[i].classList.remove("active")
-            // }
             iterRemove(navLink);
             iterRemove(siteMenuToggle);
-            siteLogo.classList.remove("active");
-
-            
+            siteLogo.classList.remove("active");            
         }
     }
 } catch (err) {
     console.log(err);
 }
 
-// (function () {
-//     document.scroll(function () {
-//       var nav = $(".navbar-fixed-top");
-//       nav.toggleClass('scrolled', this.scrollTop() > nav.height());
-//     });
-//   });

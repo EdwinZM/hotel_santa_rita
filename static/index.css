@@ -1,6 +1,32 @@
 .btn {
   color: white;
 }
+.btn-primary {
+  background-color: #e8b22c !important;
+  border-color: #e8b22c !important;
+}
+
+.site-hero-index {
+  background-color: white !important;
+}
+
+#myVideo {
+  position: fixed;
+  display: flex;
+  flex-basis: auto;
+  left: 0;
+  top: 0;
+  min-width: 100% !important;
+  min-height: 20% !important;
+  z-index: -100 !important;
+}
+
+.video-section {
+  display: flex;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+  justify-content: center;
+}
 
 #about-text {
   margin: 30px;
@@ -190,6 +216,10 @@ hr {
   }
 
 @media (max-width: 500px) {
+  #myVideo {
+    left: -102%;
+    /* width: 150% !important; */
+  }
   .frontpage-video,
   .video {
     width: 280px !important;
@@ -389,6 +419,7 @@ hr {
     .site-hero.inner-page.overlay:before {
         height: 325px !important;
         min-height: 325px !important;
+        /* z-index: 1000; */
     }
     .mouse-icon {
         display: none;
