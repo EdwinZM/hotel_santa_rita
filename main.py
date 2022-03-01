@@ -1,6 +1,18 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+db = SQLAlchemy(app)
+
+class Room(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    price = db.Column(db.Float, nullable=False)
+    name = db.Column(db.String, unique=True, nullable=False)
+    commodities = db.Column(db.String, nullable=False)
+    size = db.Column(db.Float, nullable=False)
+
+db.create_all()
 
 @app.route("/")
 def home():
