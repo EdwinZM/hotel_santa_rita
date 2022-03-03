@@ -65,7 +65,7 @@ header em.active {
 .site-menu-toggle span.active {
   background-color: #000;
 }
-
+ 
 .site-header {
   position: fixed !important;
   background-color: #700138;
@@ -167,6 +167,10 @@ hr {
   /* margin-bottom: 500px !important; */
 }
 
+.room-container {
+  background-color: rgb(200, 200, 200) !important;
+}
+
   .doblezonab,
   .sencillaconbalcon {
     min-width: 100%;
@@ -196,7 +200,7 @@ hr {
   }
 
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1050px) {
     .col-8 {
       display: flex;
       justify-content: flex-end;
@@ -213,6 +217,9 @@ hr {
     .site-logo a {
       font-size: 40px !important;
     }
+    /* .sencillaconbalcon {
+      max-width: 20% !important;
+    } */
   }
 
 @media (max-width: 500px) {
@@ -246,8 +253,61 @@ hr {
   align-self: center;
 }
 
+@media (min-width: 1120px) {
+  .index-room-btn {
+    display: flex;
+    width: 100% !important;
+    justify-items: center;
+  }
+  .room-card-container,
+    .room-container {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important
+    }
+    .room-card {
+      display: flex;
+      margin-bottom: 50px !important;
+      width: 100% !important;
+      height: 520px !important;
+      border-radius: 0;
+      background-color: rgb(241, 241, 239) !important;
+    }
+    .room-card-body {
+      align-items: flex-start;
+      float: left;
+      min-height: 0;
+      max-height: 300px !important;
+      width: 50% !important;
+      border-radius: 0;
+      background-color: none !important;
+      box-shadow: none;
+      margin: 2px !important;
+    }ç
+    .room-card-title {
+      font-size: 30px !important;
+    }
+    .room-card-body .d-block {
+      font-size: 20px !important;
+    }
+    .room-card-body .list-group {
+      font-size: 15px !important;
+    }
+    .room-card-body .btn .btn-primary {
+      right: 0px !important;
+    }
+    .room-card-img-top {
+      border-radius: 0 !important;
+      box-shadow: none;
+      max-width: 50%;
+      max-height: 400%;
+      /* float: right; */
+      /* max-width: 20% !important; */
 
-@media (max-width: 1050px) {
+    }
+}
+
+@media (max-width: 1100px) {
 
   .room-card-container {
     justify-content: center;
@@ -447,6 +507,7 @@ hr {
         padding-left: 0;
         list-style: none;
       }
+      
 }
 
 .main-image-fluid {
