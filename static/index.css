@@ -224,7 +224,7 @@ hr {
 
 @media (max-width: 500px) {
   #myVideo {
-    left: -102%;
+    left: -120% !important;
     /* width: 150% !important; */
   }
   .frontpage-video,
