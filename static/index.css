@@ -1,6 +1,6 @@
-html, body {
+/* html, body {
   overflow-x: hidden;
-}
+} */
 
 .btn {
   color: white;
@@ -303,8 +303,8 @@ hr {
     .room-card-img-top {
       border-radius: 0 !important;
       box-shadow: none;
-      max-width: 50%;
-      max-height: 400%;
+      width: 665px !important;
+      max-height: 400% !important;
       /* float: right; */
       /* max-width: 20% !important; */
 
