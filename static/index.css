@@ -225,6 +225,7 @@ hr {
 @media (max-width: 500px) {
   #myVideo {
     left: -120% !important;
+    top: -10% !important;
     /* width: 150% !important; */
   }
   .frontpage-video,
@@ -269,7 +270,7 @@ hr {
       display: flex;
       margin-bottom: 50px !important;
       width: 100% !important;
-      height: 520px !important;
+      height: 550px !important;
       border-radius: 0;
       background-color: rgb(241, 241, 239) !important;
     }
