@@ -1,7 +1,7 @@
 from wsgiref.validate import validator
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from wtforms import Form, FileField, TextField, DateField, validators
+from wtforms import Form, FileField, StringField, validators
 from flask_login import LoginManager, UserMixin, login_user, current_user
 from flask_bcrypt import Bcrypt
 
@@ -32,9 +32,9 @@ def load_user(user_id):
     return user_id
 
 class EventForm(Form):
-    name = TextField("Nombre", [validators.DataRequired()])
-    description = TextField("Descripción", [validators.DataRequired()])
-    date = TextField("Fecha", [validators.DataRequired()])
+    name = StringField("Nombre", [validators.DataRequired()])
+    description = StringField("Descripción", [validators.DataRequired()])
+    date = StringField("Fecha", [validators.DataRequired()])
     image = FileField("Imagen", validators=[validators.DataRequired()])
 
 @app.route("/") 
