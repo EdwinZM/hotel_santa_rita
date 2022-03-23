@@ -1,13 +1,14 @@
 from wsgiref.validate import validator
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from wtforms import Form, FileField, StringField, validators
-from flask_login import LoginManager, UserMixin, login_user, current_user
+from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = "uuuuuuu_secret_keeeyyyy"
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
@@ -29,7 +30,10 @@ db.create_all()
 
 @login_manager.user_loader
 def load_user(user_id):
-    return user_id
+    try:    
+        return User.query.get(user_id)
+    except:
+        return None
 
 class EventForm(Form):
     name = StringField("Nombre", [validators.DataRequired()])
@@ -51,7 +55,8 @@ def restaurant():
 
 @app.route("/blog")
 def blog():
-    return render_template("blog.html", is_authenticated=current_user.is_authenticated)
+    print(current_user)
+    return render_template("blog.html", current_user = current_user)
 
 @app.route("/reservation")
 def reservation():
@@ -67,11 +72,27 @@ def contact():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    error = ''
     if request.method == "POST":
-        pass
-        #hash password
+        password = request.form["password"]
+        # hashed_pass = bcrypt.generate_password_hash(password)
+        hotel = User.query.first()
+        hotel_pass = hotel.password
+        is_password = bcrypt.check_password_hash(hotel_pass, password)
+        
+        if is_password:
+            login_user(hotel)
+            return redirect("/blog")
+        else:
+            error="Contraseña Incorrecta"
+
     
-    return render_template("login.html")
+    return render_template("login.html", error = error)
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect("/blog")
 
 
 if __name__ == "__main__":

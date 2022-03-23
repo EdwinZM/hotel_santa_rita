@@ -62,25 +62,18 @@
 <section class="section">
 <div class="container">
   <div class="room-card-container">
-  <div class="card" style="width: 18rem;">
-    <img src="https://periodicoviaje.com/wp-content/uploads/2020/07/Festival-Internacional-Cervantino.jpg" class="room-card-img-top doblezonab" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Evento</h2>
-      <p class="card-text">Culpa officia magna ad ipsum elit cillum sint aliquip deserunt reprehenderit id sit mollit
-        anim.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="card mb-3">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body event-card-body">
+        <h5 class="card-title">Event title</h5>
+        <p class="card-text">Exercitation cupidatat aute nulla aliqua sit sunt voluptate.</p>
+        <p class="card-text"><small class="text-muted">Event date</small></p>
+      </div>
+      {% if current_user.is_authenticated %}
+      <button type="submit" class="btn-danger dlt-btn btn mb-2">Eliminar</button>
+      {% endif %}
     </div>
   </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://periodicoviaje.com/wp-content/uploads/2020/07/Festival-Internacional-Cervantino.jpg" class="room-card-img-top doblezonab" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Evento</h2>
-      <p class="card-text">Culpa officia magna ad ipsum elit cillum sint aliquip deserunt reprehenderit id sit mollit
-        anim.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
 </div>
 </section>
 
@@ -114,10 +107,10 @@
 </div>
 <div class="row pt-5">
   <ul class="list-styled link">
-  {% if is_authenticated %}
-  <li><a href="logout">Salir</a></li>
-  {% else %}
+  {% if not current_user.is_authenticated %}
   <li><a href="login">Iniciar Sesión</a></li>
+  {% else %}
+  <li><a href="logout">Salir</a></li>
   {% endif %}
   </ul>
 </div>

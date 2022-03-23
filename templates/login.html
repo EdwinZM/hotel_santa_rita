@@ -3,9 +3,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/A.css,,_bootstrap.css+css,,_animate.css+css,,_owl.carousel.min.css+css,,_aos.css+css,,_bootstrap-datepicker.css+css,,_jquery.timepicker.css+css,,_magnific-popup.css+fonts,,_ionicons,,_css,,_ionicons.min.css+fonts,,_fontawesome,,_css,,-bfb90e9bbe375f9d.css" />
+    <link rel="stylesheet" href="../static/index.css" />
     <title>Log In</title>
 </head>
-<body>
-    cacacacacacaacaccacacacaacacacacaca
+<body id="login_body">
+    <form class="form-inline login-form" action="" method="post">
+        {% if error %}
+        <em style="color: red; font-style: italic;">{{error}}</em>
+        {% endif %}
+       <input type="password" placeholder="Contraseña" name="password">
+        <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+      </form>
 </body>
 </html>

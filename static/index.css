@@ -9,6 +9,22 @@ html, body {
   background-color: #e8b22c !important;
   border-color: #e8b22c !important;
 }
+.btn-danger {
+  background-color: red !important;
+  border-color: red !important;
+}
+.btn-danger:hover {
+  background-color: rgb(196, 4, 4) !important;
+  border-color: rgb(192, 4, 4) !important;
+}
+.dlt-btn {
+  float: right !important;
+  margin: 10px !important;
+}
+
+.event-card-body {
+  padding: 20px !important;
+}
 
 .site-hero-index {
   background-color: white !important;
@@ -252,6 +268,23 @@ hr {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
+}
+
+#login_body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(207, 206, 206);
+}
+
+.login-form {
+  margin: 10vh 0;
+  max-height: 100px;
+  height: 65px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 3%;
+  box-shadow: 5px 5px 5px rgb(175, 174, 174);
 }
 
 @media (min-width: 1120px) {
