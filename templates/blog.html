@@ -62,20 +62,48 @@
 <section class="section">
 <div class="container">
   <div class="room-card-container">
-    <div class="card mb-3">
-      <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card event-card mb-1">
+      <div class="event-card-img">
+        <img class="card-img-top" src="../static/img/desc_restaurant.JPG" alt="Card image cap">
+      </div>
       <div class="card-body event-card-body">
         <h5 class="card-title">Event title</h5>
         <p class="card-text">Exercitation cupidatat aute nulla aliqua sit sunt voluptate.</p>
         <p class="card-text"><small class="text-muted">Event date</small></p>
+        {% if current_user.is_authenticated %}
+        <div class="card-buttons">
+        <button type="submit" href="/delete" class="btn-danger dlt-btn btn mb-2">Eliminar</button>
+        <button type="submit" href="/edit" class="btn-edit dlt-btn btn mb-2">Editar</button>
+        </div>
+        {% endif %}
       </div>
-      {% if current_user.is_authenticated %}
-      <button type="submit" class="btn-danger dlt-btn btn mb-2">Eliminar</button>
-      {% endif %}
     </div>
   </div>
 </div>
 </section>
+<section class="section">
+  <div class="container">
+    {% if not current_user.is_authenticated %}
+  <div class="row align-items-center">
+  <div class="col-md-6" data-aos="fade-up">
+  <h2>Sientase cómodo en cualquiera de nuestras habitaciones.</h2>
+  </div>
+  <div class="col-md-6 text-right" data-aos="fade-up" data-aos-delay="200">
+  <a href="reservation" class="btn btn-primary py-3 text-white px-5">Reserva Ya!</a>
+  </div>
+  </div>
+  {% else %}
+  <div class="row align-items-center">
+    <div class="col-md-6" data-aos="fade-up">
+    <h2>Agregue más eventos</h2>
+    </div>
+    <div class="col-md-6 text-right" data-aos="fade-up" data-aos-delay="200">
+    <a href="reservation" class="btn btn-primary py-3 text-white px-5">Añadir Evento</a>
+    </div>
+    </div>
+    {% endif %}
+  </div>
+  </section>
 
 <footer class="section footer-section">
 <div class="container">

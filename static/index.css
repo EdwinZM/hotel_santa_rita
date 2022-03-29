@@ -1,5 +1,6 @@
 html, body {
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -10,20 +11,44 @@ html, body {
   border-color: #e8b22c !important;
 }
 .btn-danger {
-  background-color: red !important;
-  border-color: red !important;
+  color: red;
 }
 .btn-danger:hover {
-  background-color: rgb(196, 4, 4) !important;
-  border-color: rgb(192, 4, 4) !important;
+  color: rgb(145, 3, 3) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
-.dlt-btn {
+.dlt-btn,
+.card-buttons {
   float: right !important;
   margin: 10px !important;
+  padding: 0;
+}
+
+.btn-edit {
+  color: rgb(155, 155, 155);
+}
+
+.btn-edit:hover {
+  color: gray;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.event-card {
+  height: auto !important;
+}
+
+
+.card-img-top {
+  max-width: 506px;
+  height: auto;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
 }
 
 .event-card-body {
-  padding: 20px !important;
+  padding: 10px !important;
+  height: auto;
 }
 
 .site-hero-index {
@@ -52,17 +77,6 @@ html, body {
   margin: 30px;
 }
 
-/* .menu-li {
-  padding: 0;
-  margin: 0;
-  height: 10px !important;
-  display: flex;
-  align-self: center;
-} */
-
-/* .site-header{
-
-} */
 header.active {
   color: black !important;
   background-color: white !important;
@@ -184,7 +198,6 @@ hr {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  /* margin-bottom: 500px !important; */
 }
 
 .room-container {
@@ -196,7 +209,6 @@ hr {
     align-self: center;
     justify-self: flex-end;
     margin-top: 1.5772870662460567vh;
-      /* margin-top: 3.1545741324921135vh !important; */
     flex-wrap: wrap;
     float: right;
     width: 30px;
@@ -233,16 +245,12 @@ hr {
     .site-logo a {
       font-size: 40px !important;
     }
-    /* .sencillaconbalcon {
-      max-width: 20% !important;
-    } */
   }
 
 @media (max-width: 500px) {
   #myVideo {
     left: -120% !important;
     top: -10% !important;
-    /* width: 150% !important; */
   }
   .frontpage-video,
   .video {
@@ -257,11 +265,6 @@ hr {
     display: flex;
     align-items: center !important;
   }
-  /* .navigation-bar,
-  .navbar,
-  .navbar-nav {
-    margin-top: 50%;
-  } */
 }
 
 .site-logo {
@@ -557,6 +560,33 @@ hr {
 }
 
 @media (max-width: 600px) {
+  .card-img-top {
+    max-width: 100%;
+  }
+
+  /* .card-buttons {
+    display: none;
+  } */
+
+  .event-card-body{
+    display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  min-height: auto;
+  padding: 20px;
+  margin: auto;
+  background-color: rgb(242, 242, 242);
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+  box-shadow: 5px 5px 5px rgb(190, 190, 190);
+  }
+
+  .card-buttons {
+    display: flex;
+    justify-self: end;
+  }
+
   .room-card,
   .event-room-card,
   .card {
