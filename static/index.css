@@ -3,6 +3,22 @@ html, body {
   box-sizing: border-box;
 }
 
+.event-form {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: nowrap;
+  padding: 20px;
+  max-width: 500px;
+  max-height: 360px;
+  /* top: 50px !important; */
+  margin: auto;
+  background-color: white;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px rgb(190, 190, 190);
+  border: rgb(190, 190, 190);
+}
+
 .btn {
   color: white;
 }
@@ -27,6 +43,7 @@ html, body {
 
 .btn-edit {
   color: rgb(155, 155, 155);
+  background-color: transparent;
 }
 
 .btn-edit:hover {
@@ -38,18 +55,35 @@ html, body {
   height: auto !important;
 }
 
-
 .card-img-top {
+  max-width: 100%;
+}
+
+.event-card-body{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  min-height: auto;
+  padding: 20px;
+  margin: auto;
+  background-color: rgb(242, 242, 242);
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+  box-shadow: 5px 5px 5px rgb(190, 190, 190);
+}
+
+/* .card-img-top {
   max-width: 506px;
   height: auto;
   border-top-left-radius: 2%;
   border-top-right-radius: 2%;
-}
+} */
 
-.event-card-body {
+/* .event-card-body {
   padding: 10px !important;
   height: auto;
-}
+} */
 
 .site-hero-index {
   background-color: white !important;
@@ -229,6 +263,18 @@ hr {
 
 
   @media (min-width: 1050px) {
+    /* .event-card-body {
+      box-shadow: none !important;
+      display: block;
+      padding: 10px !important;
+      height: auto;
+    }
+    .card-img-top {
+      max-width: 506px;
+      height: auto;
+      border-top-left-radius: 2%;
+      border-top-right-radius: 2%;
+    } */
     .col-8 {
       display: flex;
       justify-content: flex-end;
@@ -560,15 +606,15 @@ hr {
 }
 
 @media (max-width: 600px) {
-  .card-img-top {
+  /* .card-img-top {
     max-width: 100%;
-  }
+  } */
 
   /* .card-buttons {
     display: none;
   } */
 
-  .event-card-body{
+  /* .event-card-body{
     display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -580,7 +626,7 @@ hr {
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
   box-shadow: 5px 5px 5px rgb(190, 190, 190);
-  }
+  } */
 
   .card-buttons {
     display: flex;
@@ -610,3 +656,22 @@ hr {
     background-color: goldenrod;
 }
 
+@media (min-width: 750px) {
+  .event-card-body {
+    box-shadow: none !important;
+    display: block;
+    padding: 10px !important;
+    height: auto;
+  }
+  .card-img-top {
+    max-width: 506px;
+    width: 506px;
+    height: auto;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+  }
+  .event-card {
+    max-height: auto !important;
+    margin: 20px;
+  }
+}

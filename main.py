@@ -1,7 +1,11 @@
+from crypt import methods
+import base64
+from io import BytesIO
 from wsgiref.validate import validator
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
-from wtforms import Form, FileField, StringField, validators
+from flask_wtf import FlaskForm
+from wtforms import FileField, StringField, validators, DateField, SubmitField
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
 from flask_bcrypt import Bcrypt
 
@@ -17,14 +21,15 @@ login_manager.init_app(app)
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img_file = db.Column(db.Integer, nullable=False)
-    name = db.Column(db.String, unique=True, nullable=False)
-    description = db.Column(db.String, nullable=False)
-    date = db.Column(db.String, nullable=False)
+    img_file = db.Column(db.LargeBinary)
+    img_name = db.Column(db.String())
+    name = db.Column(db.String(), unique=True, nullable=False)
+    description = db.Column(db.String(), nullable=False)
+    date = db.Column(db.String(), nullable=False)
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    password = db.Column(db.String, nullable=False)
+    password = db.Column(db.String(), nullable=False)
 
 db.create_all()
 
@@ -35,11 +40,12 @@ def load_user(user_id):
     except:
         return None
 
-class EventForm(Form):
-    name = StringField("Nombre", [validators.DataRequired()])
-    description = StringField("Descripción", [validators.DataRequired()])
-    date = StringField("Fecha", [validators.DataRequired()])
-    image = FileField("Imagen", validators=[validators.DataRequired()])
+class EventForm(FlaskForm):
+    name = StringField("Nombre")
+    description = StringField("Descripción")
+    date = StringField("Fecha")
+    image = FileField("Imagen")
+    submit = SubmitField("Añadir")
 
 @app.route("/") 
 def home():
@@ -55,8 +61,8 @@ def restaurant():
 
 @app.route("/blog")
 def blog():
-    print(current_user)
-    return render_template("blog.html", current_user = current_user)
+    events = Event.query.all()
+    return render_template("blog.html", current_user = current_user, events = events, BytesIO=BytesIO, b64 = base64)
 
 @app.route("/reservation")
 def reservation():
@@ -94,6 +100,40 @@ def logout():
     logout_user()
     return redirect("/blog")
 
+@app.route("/addevent", methods=["GET", "POST"])
+def addevent():
+    form = EventForm()
+
+    if request.method == "POST":
+        img = form.image.data
+        img_nm = img.filename
+        img64 = img.read()
+        new_event = Event(
+            img_file = img64,
+            img_name = img_nm,
+            name = form.name.data,
+            description = form.description.data,
+            date = form.date.data
+        )
+
+        # print(form.image.data)
+        # print(form.name.data)
+        # print(form.description.data)
+        # print(form.date.data)
+        db.session.add(new_event)
+        db.session.commit()
+
+        return redirect("/blog")
+
+    return render_template("addevent.html", form=form)
+
+
+@app.route("/delete:<id>")
+def delete(id):
+    item_to_delete = Event.query.get(id)
+    db.session.delete(item_to_delete)
+    db.session.commit()
+    return redirect("/blog")
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1")

@@ -62,22 +62,24 @@
 <section class="section">
 <div class="container">
   <div class="room-card-container">
-    <div class="card event-card mb-1">
+    {% for event in events %}
+    <div class="card event-card">
       <div class="event-card-img">
-        <img class="card-img-top" src="../static/img/desc_restaurant.JPG" alt="Card image cap">
+        <img class="card-img-top" src='data:;base64,{{b64.b64encode(event.img_file).decode("utf-8")}}' alt="Card image cap">
       </div>
       <div class="card-body event-card-body">
-        <h5 class="card-title">Event title</h5>
-        <p class="card-text">Exercitation cupidatat aute nulla aliqua sit sunt voluptate.</p>
-        <p class="card-text"><small class="text-muted">Event date</small></p>
+        <h5 class="card-title">{{event.name}}</h5>
+        <p class="card-text">{{event.description}}</p>
+        <p class="card-text"><small class="text-muted">{{event.date}}</small></p>
         {% if current_user.is_authenticated %}
         <div class="card-buttons">
-        <button type="submit" href="/delete" class="btn-danger dlt-btn btn mb-2">Eliminar</button>
-        <button type="submit" href="/edit" class="btn-edit dlt-btn btn mb-2">Editar</button>
+        <button class="btn-danger dlt-btn btn mb-2"><a href="/delete:{{event.id}}" style="color: red;">Eliminar</a></button>
+        <button class="btn-edit dlt-btn btn mb-2"><a href="/edit:{{event.id}}" style="color: gray">Editar</a></button>
         </div>
         {% endif %}
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
 </section>
@@ -98,7 +100,7 @@
     <h2>Agregue más eventos</h2>
     </div>
     <div class="col-md-6 text-right" data-aos="fade-up" data-aos-delay="200">
-    <a href="reservation" class="btn btn-primary py-3 text-white px-5">Añadir Evento</a>
+    <a href="addevent" class="btn btn-primary py-3 text-white px-5">Añadir Evento</a>
     </div>
     </div>
     {% endif %}
