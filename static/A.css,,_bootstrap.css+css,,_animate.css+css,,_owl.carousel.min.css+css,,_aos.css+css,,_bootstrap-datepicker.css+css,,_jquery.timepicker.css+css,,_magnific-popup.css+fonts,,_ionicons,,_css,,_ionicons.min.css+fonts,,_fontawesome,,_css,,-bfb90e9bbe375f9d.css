@@ -410,8 +410,8 @@ a > code {
 }
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  /* padding-right: 15px;
+  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -9527,20 +9527,22 @@ textarea.form-control {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0 !important;
   z-index: 2;
 }
 .menu-open .site-header {
   position: fixed;
 }
 .site-logo a {
-  font-size: 20px !important;
+  font-size: 20px;
   color: #fff;
   font-weight: bold;
   line-height: 1;
   /* font-family: "Playfair+Display", times, serif; */
   font-family: 'Vivaldi' !important;
 }
+
+
 .site-navbar {
   position: relative;
   display: flex;

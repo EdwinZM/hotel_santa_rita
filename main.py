@@ -2,7 +2,7 @@ from crypt import methods
 import base64
 from io import BytesIO
 from wsgiref.validate import validator
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, redirect, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import FileField, StringField, validators, DateField, SubmitField
@@ -23,7 +23,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     img_file = db.Column(db.LargeBinary)
     img_name = db.Column(db.String())
-    name = db.Column(db.String(), unique=True, nullable=False)
+    name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(), nullable=False)
     date = db.Column(db.String(), nullable=False)
 
@@ -41,10 +41,10 @@ def load_user(user_id):
         return None
 
 class EventForm(FlaskForm):
-    name = StringField("Nombre")
-    description = StringField("Descripción")
-    date = StringField("Fecha")
-    image = FileField("Imagen")
+    name = StringField("Nombre", validators=[validators.DataRequired()])
+    description = StringField("Descripción", validators=[validators.DataRequired()])
+    date = StringField("Fecha", validators=[validators.DataRequired()])
+    image = FileField("Imagen", validators=[validators.DataRequired()])
     submit = SubmitField("Añadir")
 
 @app.route("/") 
@@ -126,6 +126,46 @@ def addevent():
         return redirect("/blog")
 
     return render_template("addevent.html", form=form)
+
+@app.route("/edit:<id>", methods=["GET", "POST"])
+def edit_event(id):
+    event = Event.query.get(id)
+    print(event)
+    print("hello")
+    form = EventForm()
+    form.name.data = event.name
+    form.description.data = event.description
+    form.date.data = event.date
+    form.image.data = event.img_file
+
+    print(request.method)
+
+    if request.method == "POST":
+        form = EventForm()
+        # img = form.image.data
+        # print(img)
+        # img_name = img.filename
+        # img_file = img.read()
+        
+        # event.img_name = img_name
+        edited_event = Event(
+            id = event.id,
+            img_file = form.image.data.read(),
+            name = form.name.data,
+            description = form.description.data,
+            date = form.date.data
+        )
+
+        print(edited_event)
+
+        db.session.delete(event)
+        db.session.add(edited_event)
+        db.session.commit()
+
+        return redirect(url_for("blog"))
+
+    return render_template("edit_event.html", form = form, id=event.id)
+
 
 
 @app.route("/delete:<id>")

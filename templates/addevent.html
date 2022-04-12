@@ -9,7 +9,7 @@
 </head>
 <body id="login_body">
     <div class="form event-form">
-        <form class="form-group column" action="/addevent" enctype="multipart/form-data" method="POST">
+        <form class="form-group column" action="" enctype="multipart/form-data" method="POST">
             {{ form.csrf_token }}
             {{form.hidden_tag()}}
             {{form.name.label}}

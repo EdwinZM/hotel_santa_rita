@@ -68,9 +68,10 @@ html, body {
   padding: 20px;
   margin: auto;
   background-color: rgb(242, 242, 242);
-  border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 2%;
+  border-bottom-left-radius: 2% !important;
+  border-bottom-right-radius: 2% !important;
   box-shadow: 5px 5px 5px rgb(190, 190, 190);
+  word-wrap: break-word !important;
 }
 
 /* .card-img-top {
@@ -135,10 +136,20 @@ header em.active {
 }
  
 .site-header {
+  display: flex;
+  justify-content: space-between !important;
   position: fixed !important;
   background-color: #700138;
 } 
 
+.header-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap !important;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 0;
+}
 
 hr {
   border: solid 1px rgb(190, 190, 190);
@@ -282,14 +293,14 @@ hr {
     .site-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between !important;
       padding: 40px 5px !important;
       height: 0px !important;
       position: fixed !important;
       background-color: #700138 !important;
     } 
     .site-logo a {
-      font-size: 40px !important;
+      font-size: 50px !important;
     }
   }
 
@@ -315,8 +326,16 @@ hr {
 
 .site-logo {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap !important;
+  flex-direction: row;
   align-self: center;
+  font-size: 24px !important;
+
+}
+
+.header-col-8 {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
 #login_body {
@@ -614,20 +633,6 @@ hr {
     display: none;
   } */
 
-  /* .event-card-body{
-    display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: space-between;
-  min-height: auto;
-  padding: 20px;
-  margin: auto;
-  background-color: rgb(242, 242, 242);
-  border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 2%;
-  box-shadow: 5px 5px 5px rgb(190, 190, 190);
-  } */
-
   .card-buttons {
     display: flex;
     justify-self: end;
@@ -645,6 +650,9 @@ hr {
   .sencillaconbalcon {
     min-width: 250px !important;
   }
+  /* .site-logo {
+
+  } */
 }
 
 .main-image-fluid {
@@ -672,6 +680,7 @@ hr {
   }
   .event-card {
     max-height: auto !important;
+    max-width: 502px !important;
     margin: 20px;
   }
 }
