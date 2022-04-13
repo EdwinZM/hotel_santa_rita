@@ -249,9 +249,9 @@ hr {
   align-content: center;
 }
 
-.room-container {
+/* .room-container {
   background-color: rgb(200, 200, 200) !important;
-}
+} */
 
   .site-menu-toggle {
     display: flex;
@@ -276,8 +276,30 @@ hr {
     cursor: pointer;
   }
 
+  .room-link {
+    color: black;
+    margin: 10px !important;
+  }
+
+  .room-link:hover {
+    color: #e8b22c;
+  }
+
+  .room-link:active,
+  .room-link:focus,
+  :target {
+    color: #e8b22c !important;
+  }
+
+  .room-link-text {
+    font-weight: bolder !important;
+  }
+
 
   @media (min-width: 1050px) {
+    .rsrv-btn {
+      margin-left: 15px !important;
+    }
     .site-menu-toggle {
       display: none !important;
       margin: 0;
@@ -317,8 +339,7 @@ hr {
 
 @media (max-width: 500px) {
   #myVideo {
-    left: -120% !important;
-    top: -10% !important;
+   left: -35% !important;
   }
   .frontpage-video,
   .video {
@@ -366,6 +387,15 @@ hr {
   box-shadow: 5px 5px 5px rgb(175, 174, 174);
 }
 
+.room-link-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+
 @media (min-width: 1120px) {
   body {
     margin: 0;
@@ -377,17 +407,16 @@ hr {
     width: 100% !important;
     justify-items: center;
   }
-  .room-card-container,
-    .room-container {
+  .room-card-container {
       width: 100% !important;
-      padding: 0 !important;
+      padding: 0 auto !important;
       margin: 0 !important
     }
     .room-card {
       display: flex;
       margin-bottom: 50px !important;
       width: 100% !important;
-      height: 550px !important;
+      height: 600px !important;
       border-radius: 0;
       background-color: rgb(241, 241, 239) !important;
     }
@@ -677,6 +706,9 @@ hr {
 }
 
 @media (min-width: 750px) {
+  .mobile-break {
+    display: none !important;
+  }
   .event-card-body {
     box-shadow: none !important;
     display: block;
