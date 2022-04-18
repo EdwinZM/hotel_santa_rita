@@ -52,16 +52,36 @@ html, body {
   border-color: transparent !important;
 }
 .event-card {
-  height: auto !important;
+  position: relative;
+  display: block;
+  height: 100% !important;
+}
+
+.event-card-body {
+  position: relative;
+  display: block;
 }
 
 .card-img-top {
-  max-width: 100%;
+  max-width: 100% !important;
+}
+
+.event-card-img {
+  width: 100%
+}
+
+.event-card-img,
+.card-img-top {
+  position: relative;
+  border-top-left-radius: 2% !important;
+  border-top-right-radius: 2% !important;
+  object-fit: cover !important;
 }
 
 .event-card-body{
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   align-content: space-between;
   justify-content: space-between;
   min-height: auto;
@@ -73,6 +93,8 @@ html, body {
   box-shadow: 5px 5px 5px rgb(190, 190, 190);
   word-wrap: break-word !important;
 }
+
+
 
 /* .card-img-top {
   max-width: 506px;
@@ -284,7 +306,12 @@ hr {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: center;
+  align-content: space-between !important;
+  
+}
+
+.event-card-container {
+  position: relative; 
 }
 
 /* .room-container {
@@ -337,6 +364,16 @@ hr {
   .room-carousel-controls {
     width: 93.5% !important;
   }
+  .add-event-container {
+    margin-top: 300px !important;
+  }
+  .event-card-margin {
+    margin-top: 80%  !important;
+  }
+  .event-card-container {
+    display: flex;
+    align-content: space-between;
+  }
 }
   @media (min-width: 1050px) {
     .carousel,
@@ -383,9 +420,24 @@ hr {
     .site-logo a {
       font-size: 45px !important;
     }
+    .room-card-container {
+      display: flex;
+      align-items: flex-start !important;
+    }
   }
 
 @media (max-width: 500px) {
+  .event-card-img {
+    position: relative;
+    max-height: 300px !important;
+    min-height: 150px !important;
+    min-width: 98%; 
+    object-fit: cover !important;
+    margin: 5px !important;
+  }
+  .event-card-body {
+    position: relative; 
+  }
   #myVideo {
    left: -35% !important;
   }
@@ -521,6 +573,7 @@ hr {
 @media (max-width: 1100px) {
   .room-card,
   .event-room-card,
+  .event-card,
   .card {
     align-self: center;
     min-width: 500px !important;
@@ -730,8 +783,14 @@ hr {
 }
 
 @media (max-width: 600px) {
-  /* .card-img-top {
-    max-width: 100%;
+  .card-img-top {
+    max-width: 100% !important;
+  }
+
+  /* .event-card {
+    position: relative !important;
+    max-height: 500px !important;
+    margin-top: 200px !important;
   } */
 
   /* .card-buttons {
@@ -745,6 +804,7 @@ hr {
 
   .room-card,
   .event-room-card,
+  .event-card,
   .card {
     align-self: center;
     min-width: 300px !important;
@@ -777,7 +837,7 @@ hr {
     box-shadow: none !important;
     display: block;
     padding: 10px !important;
-    height: auto;
+    height: 100%;
   }
   .card-img-top {
     max-width: 506px;

@@ -61,13 +61,13 @@
 
 <section class="section">
 <div class="container">
-  <div class="room-card-container">
+  <div class="room-card-container event-card-container">
     {% for event in events %}
-    <div class="card event-card">
+    <div class="event-card card  event-card-margin">
       <div class="event-card-img">
         <img class="card-img-top" src='data:;base64,{{b64.b64encode(event.img_file).decode("utf-8")}}' alt="Card image cap">
       </div>
-      <div class="card-body event-card-body">
+      <div class="event-card-body card-body ">
         <h5 class="card-title">{{event.name}}</h5>
         <p class="card-text">{{event.description}}</p>
         <p class="card-text"><small class="text-muted">{{event.date}}</small></p>
@@ -84,7 +84,7 @@
 </div>
 </section>
 <section class="section">
-  <div class="container">
+  <div class="container add-event-container">
     {% if not current_user.is_authenticated %}
   <div class="row align-items-center">
   <div class="col-md-6" data-aos="fade-up">
