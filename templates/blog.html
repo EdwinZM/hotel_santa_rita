@@ -63,7 +63,7 @@
 <div class="container">
   <div class="room-card-container event-card-container">
     {% for event in events %}
-    <div class="event-card card  event-card-margin">
+    <div class="event-card {% if event.id == 1 %} event-card-margin-1 {% endif %} event-card-margin card  ">
       <div class="event-card-img">
         <img class="card-img-top" src='data:;base64,{{b64.b64encode(event.img_file).decode("utf-8")}}' alt="Card image cap">
       </div>

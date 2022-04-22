@@ -67,7 +67,7 @@ html, body {
 }
 
 .event-card-img {
-  width: 100%
+  width: 100%;
 }
 
 .event-card-img,
@@ -370,6 +370,9 @@ hr {
   .event-card-margin {
     margin-top: 80%  !important;
   }
+  .event-card-margin-1 {
+    margin-top: 50px !important;
+  }
   .event-card-container {
     display: flex;
     align-content: space-between;
@@ -431,7 +434,7 @@ hr {
     position: relative;
     max-height: 300px !important;
     min-height: 150px !important;
-    min-width: 98%; 
+    /* width: 99%;  */
     object-fit: cover !important;
     margin: 5px !important;
   }
