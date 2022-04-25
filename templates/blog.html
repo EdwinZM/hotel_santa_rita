@@ -135,15 +135,18 @@
   <script src=https://hotels.cloudbeds.com/widget/load/wPFo4R/vert></script>
 </div>
 </div>
-<div class="row pt-5">
+<!-- <div class="row pt-5"> -->
   <ul class="list-styled link">
   {% if not current_user.is_authenticated %}
   <li><a href="login">Iniciar Sesión</a></li>
   {% else %}
-  <li><a href="logout">Salir</a></li>
+  <div class="out_pwd">
+    <li><a href="logout">Salir</a></li>
+    <li><a href="changepwd">Cambiar Contraseña</a></li>
+  </div>
   {% endif %}
   </ul>
-</div>
+<!-- </div> -->
 <div class="row bordertop pt-5">
 <p class="col-md-6 text-left">
   Copyright &copy; <span id="copy-year">2021</span> Made by Interactiva360

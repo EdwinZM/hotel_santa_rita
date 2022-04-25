@@ -75,7 +75,7 @@ html, body {
   position: relative;
   border-top-left-radius: 2% !important;
   border-top-right-radius: 2% !important;
-  object-fit: cover !important;
+  /* object-fit: cover !important; */
 }
 
 .event-card-body{
@@ -294,8 +294,14 @@ hr {
   box-shadow: 5px 5px 5px rgb(190, 190, 190);
 }
 
+.out_pwd {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
 .grandes-ofertas {
-  background-color: rgb(200, 200, 200) !important;
+  /* background-color: rgb(241, 241, 241) !important; */
+  background-color: rgb(235, 216, 166) !important;
 }
 
 .list-group {
@@ -358,6 +364,10 @@ hr {
 
   .room-link-text {
     font-weight: bolder !important;
+  }
+
+  .map-section {
+    padding: 0 !important;
   }
 
 @media (max-width: 1049px) {
@@ -430,13 +440,16 @@ hr {
   }
 
 @media (max-width: 500px) {
+  .email {
+    font-size: 18px !important;
+  }
   .event-card-img {
     position: relative;
     max-height: 300px !important;
     min-height: 150px !important;
-    /* width: 99%;  */
-    object-fit: cover !important;
-    margin: 5px !important;
+    width: 101.5%; 
+    /* object-fit: cover !important; */
+    /* margin: 5px !important; */
   }
   .event-card-body {
     position: relative; 
@@ -473,7 +486,7 @@ hr {
   flex-wrap: nowrap !important;
   flex-direction: row;
   align-self: center;
-  font-size: 24px !important;
+  font-size: 21px !important;
 
 }
 
