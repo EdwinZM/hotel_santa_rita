@@ -1,5 +1,6 @@
 # from crypt import methods
 import base64
+from werkzeug.datastructures import FileStorage
 from io import BytesIO
 from wsgiref.validate import validator
 from flask import Flask, render_template, request, redirect, send_file, url_for
@@ -22,7 +23,7 @@ login_manager.init_app(app)
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     img_file = db.Column(db.LargeBinary)
-    img_name = db.Column(db.String())
+    img_name = db.Column(db.String()) 
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(), nullable=False)
     date = db.Column(db.String(), nullable=False)
@@ -115,7 +116,7 @@ def addevent():
             description = form.description.data,
             date = form.date.data
         )
-
+        print(img_nm)
         # print(form.image.data)
         # print(form.name.data)
         # print(form.description.data)
@@ -136,7 +137,9 @@ def edit_event(id):
     form.name.data = event.name
     form.description.data = event.description
     form.date.data = event.date
-    form.image.data = event.img_file
+    form.image.process_data(base64.b64encode(event.img_file).decode("utf-8"))
+    #  FileStorage(stream=event.img_file, filename = event.img_name) 
+    # base64.b64encode(event.img_file).decode("utf-8")
 
     print(request.method)
 
@@ -166,7 +169,35 @@ def edit_event(id):
 
     return render_template("edit_event.html", form = form, id=event.id)
 
+@app.route("/changepwd", methods=["GET", "POST"])
+def change_password():
+    error = None
+    if request.method == "POST":
+        pwd = User.query.first()
+        old_pass = request.form["oldEmail"]
+        new_pass = request.form["newEmail"]
+        new_hash_pass = bcrypt.generate_password_hash(new_pass)
 
+        print(pwd)
+        print(old_pass)
+        print(new_pass)
+
+        is_pass = bcrypt.check_password_hash(pwd.password, old_pass)
+
+        if is_pass: 
+            new_pwd = User(id = pwd.id, password = new_hash_pass)
+
+            db.session.delete(pwd)
+            db.session.add(new_pwd)
+            db.session.commit()
+
+            return redirect("/blog")
+        elif not is_pass:
+            error = "Contraseña Incorrecta"
+        else:
+            error = "Something went wrong"
+
+    return render_template("changepwd.html", error = error)
 
 @app.route("/delete:<id>")
 def delete(id):
@@ -175,7 +206,7 @@ def delete(id):
     db.session.commit()
     return redirect("/blog")
 
-    
+
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1")
+    app.run(host="127.0.0.1", debug=True)
