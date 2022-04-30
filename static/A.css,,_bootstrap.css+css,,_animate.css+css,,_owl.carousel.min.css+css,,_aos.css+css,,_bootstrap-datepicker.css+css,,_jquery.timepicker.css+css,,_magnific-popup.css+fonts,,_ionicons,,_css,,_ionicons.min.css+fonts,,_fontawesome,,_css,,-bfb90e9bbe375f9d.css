@@ -10109,9 +10109,9 @@ textarea.form-control {
 .sidebar-search .search-input:active {
   border-color: #343a40;
 }
-.contact-section .contact-info p {
+.contact-section .p {
   font-family: "Montserrat", times, serif;
-  font-size: 23px;
+  font-size: 25px;
   margin-bottom: 30px;
 }
 .contact-section .contact-info p .d-block {
