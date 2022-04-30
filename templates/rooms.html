@@ -293,8 +293,8 @@
   </p>
 </div>
 <div class="room-link-container mobile-rooms">
-  <select>
-    <option>
+  <select id="room_selector" onchange="getRoom()">
+    <option value="opt1">
       <p>
         <a class="room-link" data-toggle="collapse" href="#HabitacionEstandarEnZonaInterior" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Sencilla en Zona Interior</p>
@@ -304,7 +304,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt2">
       <p>
         <a class="room-link" data-toggle="collapse" href="#HabitacionDobleEnZonaInterior" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Doble en Zona Interior</p>
@@ -315,7 +315,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt3">
       <p>
         <a class="room-link" data-toggle="collapse" href="#SencillaBalcon" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Sencilla con Balcón</p>
@@ -326,7 +326,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt4">
       <p>
         <a class="room-link" data-toggle="collapse" href="#DobleBalcon" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Doble con Balcón</p>
@@ -337,7 +337,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt5">
       <p>
         <a class="room-link" data-toggle="collapse" href="#SencillaB" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Sencilla en Zona B</p>
@@ -348,7 +348,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt6">
       <p>
         <a class="room-link" data-toggle="collapse" href="#DobleB" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Doble en Zona B</p>
@@ -359,7 +359,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt7">
       <p>
         <a class="room-link" data-toggle="collapse" href="#SencillaTerraza" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Sencilla con Terraza</p>
@@ -370,7 +370,7 @@
         </button>  -->
       </p>
     </option>
-    <option>
+    <option value="opt8">
       <p>
         <a class="room-link" data-toggle="collapse" href="#DobleTerraza" role="button" aria-expanded="false" aria-controls="collapseExample">
           <p class="room-link-text">Habitación Doble con Terraza</p>
@@ -383,7 +383,7 @@
     </option>
 </select>
 </div>
-<div class="collapse show" data-parent="#rooms" id="HabitacionEstandarEnZonaInterior">
+<div class="room_opt1 collapse show" data-parent="#rooms" id="HabitacionEstandarEnZonaInterior">
   <div class="room-card" style="width: 18rem;">
     <div id="carouselExampleControls" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -432,7 +432,7 @@
   </div>
 </div>
 
-<div class="collapse" data-parent="#rooms" id="HabitacionDobleEnZonaInterior">
+<div class="room_opt2 collapse" data-parent="#rooms" id="HabitacionDobleEnZonaInterior">
   <div class="room-card" style="width: 18rem;">
     <div id="carouselExampleControls1" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -476,7 +476,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="SencillaBalcon">
+<div class="room_opt3 collapse" data-parent="#rooms" id="SencillaBalcon">
   <div class="room-card" style="width: 18rem;" >
     <div id="carouselExampleControls2" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -525,7 +525,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="DobleBalcon">
+<div class="room_opt4 collapse" data-parent="#rooms" id="DobleBalcon">
   <div class="room-card"  style="width: 18rem;">
     <div id="carouselExampleControls3" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -574,7 +574,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="SencillaB">
+<div class="room_opt5 collapse" data-parent="#rooms" id="SencillaB">
   <div class="room-card" style="width: 18rem;">
     <div id="carouselExampleControls4" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -616,7 +616,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="DobleB">
+<div class="room_opt6 collapse" data-parent="#rooms" id="DobleB">
   <div class="room-card" style="width: 18rem;">
     <div id="carouselExampleControls5" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -661,7 +661,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="SencillaTerraza">
+<div class="room_opt7 collapse" data-parent="#rooms" id="SencillaTerraza">
   <div class="room-card" style="width: 18rem;">
     <div id="carouselExampleControls6" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">
@@ -710,7 +710,7 @@
     </div>
   </div>
 </div>
-<div class="collapse" data-parent="#rooms" id="DobleTerraza">
+<div class="room_opt8 collapse" data-parent="#rooms" id="DobleTerraza">
   <div class="room-card" style="width: 18rem;" >
     <div id="carouselExampleControls7" class="room-card-img-top carousel slide" data-ride="carousel">
       <div class="room-carousel-controls">

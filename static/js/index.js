@@ -1,3 +1,5 @@
+
+
 try {
     const header = document.querySelector(".site-header");
     const navLink = document.querySelectorAll("header nav li a");
@@ -37,3 +39,21 @@ try {
 }
 
 
+// //on change hide all divs linked to select and show only linked to selected option
+// function getRoom(){
+//     //Saves in a variable the wanted div
+//     var selector = '.room_' + document.getElementById("room_selector").value;
+//     console.log(selector)
+
+//     //hide all elements
+
+//     var collapsibles = document.querySelectorAll('.collapse');
+
+//     for (collapser in collapsibles) {
+//         var bsCollapse = new bootstrap
+//         collapser.collapse("hide");
+//     }
+
+//     //show only element connected to selected option
+//     $(selector).collapse('show');
+// };

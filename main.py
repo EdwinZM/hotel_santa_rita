@@ -159,7 +159,7 @@ def edit_event(id):
             date = form.date.data
         )
 
-        print(edited_event)
+        print(edited_event)  
 
         db.session.delete(event)
         db.session.add(edited_event)
