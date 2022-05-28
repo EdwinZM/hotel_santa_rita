@@ -137,7 +137,7 @@ def edit_event(id):
     form.name.data = event.name
     form.description.data = event.description
     form.date.data = event.date
-    form.image.process_data(base64.b64encode(event.img_file).decode("utf-8"))
+    # form.image.process_data(base64.b64encode(event.img_file).decode("utf-8"))
     #  FileStorage(stream=event.img_file, filename = event.img_name) 
     # base64.b64encode(event.img_file).decode("utf-8")
 
@@ -153,7 +153,7 @@ def edit_event(id):
         # event.img_name = img_name
         edited_event = Event(
             id = event.id,
-            img_file = form.image.data.read(),
+            img_file = event.img_file,
             name = form.name.data,
             description = form.description.data,
             date = form.date.data

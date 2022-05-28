@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/A.css,,_bootstrap.css+css,,_animate.css+css,,_owl.carousel.min.css+css,,_aos.css+css,,_bootstrap-datepicker.css+css,,_jquery.timepicker.css+css,,_magnific-popup.css+fonts,,_ionicons,,_css,,_ionicons.min.css+fonts,,_fontawesome,,_css,,-bfb90e9bbe375f9d.css" />
     <link rel="stylesheet" href="../static/index.css" />
-    <title>Añade Evento</title>
+    <title>Editar Evento</title>
 </head>
-<body id="login_body">
+
+<body class="login_body">
     <div class="form event-form">
-        <form class="form-group column" action="/edit:{{id}}" enctype="multipart/form-data" method="POST">
+        <form class="form-group column" action="" enctype="multipart/form-data" method="POST">
             {{ form.csrf_token }}
             {{form.hidden_tag()}}
             {{form.name.label}}
@@ -24,13 +25,13 @@
             {{form.date}}
             <br>
             <br>
-            {{form.image.label}}
+            <!-- {{form.image.label}}
             {{form.image}}
             <br>
-            <br>
+            <br> -->
             <div class="card-buttons">
                 <button class="btn btn-edit" href="/blog">Cancelar</button>
-                <button class="btn btn-primary" type="submit" method="PUT">Añadir</button>
+                <button class="btn btn-primary" type="submit">Listo</button>
             </div>
         </form>
     </div>
