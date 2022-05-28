@@ -18,7 +18,7 @@
             <br>
             <br>
             {{form.description.label}}
-            {{form.description}}
+            {{form.description(cols="30", rows="2")}}
             <br>
             <br>
             {{form.date.label}}
@@ -30,7 +30,7 @@
             <br>
             <br>
             <div class="card-buttons">
-                <button class="btn btn-edit" href="/blog">Cancelar</button>
+                <!-- <button class="btn btn-edit" type="cancel" href="/blog">Cancelar</button> -->
                 <button class="btn btn-primary" type="submit">Añadir</button>
             </div>
         </form>

@@ -6,7 +6,8 @@ from wsgiref.validate import validator
 from flask import Flask, render_template, request, redirect, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import FileField, StringField, validators, DateField, SubmitField
+from wtforms import FileField, StringField, validators, DateField, SubmitField, TextAreaField
+from wtforms.widgets import TextArea
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
 from flask_bcrypt import Bcrypt
 
@@ -42,10 +43,10 @@ def load_user(user_id):
         return None
 
 class EventForm(FlaskForm):
-    name = StringField("Nombre", validators=[validators.DataRequired()])
-    description = StringField("Descripción", validators=[validators.DataRequired()])
-    date = StringField("Fecha", validators=[validators.DataRequired()])
-    image = FileField("Imagen", validators=[validators.DataRequired()])
+    name = StringField("Nombre")
+    description = TextAreaField("Descripción", widget=TextArea())
+    date = StringField("Fecha")
+    image = FileField("Imagen")
     submit = SubmitField("Añadir")
 
 @app.route("/") 
