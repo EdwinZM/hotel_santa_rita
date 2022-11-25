@@ -5,5 +5,5 @@ if sys.executable != INTERP:
 sys.path.append(os.getcwd())
 
 
-sys.path.append('app')
-from app import app as application
+sys.path.append('main')
+from main import app as application
