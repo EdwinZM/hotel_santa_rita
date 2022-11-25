@@ -3,7 +3,7 @@ import base64
 from werkzeug.datastructures import FileStorage
 from io import BytesIO
 from wsgiref.validate import validator
-from flask import Flask, render_template, request, redirect, send_file, url_for, init_db
+from flask import Flask, render_template, request, redirect, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import FileField, StringField, validators, DateField, SubmitField, TextAreaField
@@ -12,8 +12,8 @@ from flask_login import LoginManager, UserMixin, login_user, current_user, logou
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-with app.app_context():
-    init_db()
+# with app.app_context():
+#     init_db()
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "uuuuuuu_secret_keeeyyyy"
